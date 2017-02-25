@@ -1,0 +1,60 @@
+<div class="field">
+  <label>Тираж</label>
+  <select ng-model="selected.amount" ng-options="record.tag for record in prodAttr.amount">
+  </select>
+</div>
+<div class="field">
+  <label>Размер</label>
+  <select class="othervar" ng-model="selected.format" ng-options="record.tag for record in prodAttr.format">
+  </select>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side1" ng-disabled="!selected.format.editable">
+  <span> x </span>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side2" ng-disabled="!selected.format.editable">
+  <span style="font-size:13px"> мм </span>
+</div>
+<div class="field">
+  <label>Магнитная основа</label>
+  <select ng-model="selected.basis" ng-options="record.tag for record in prodAttr.basis">
+  </select>
+</div>
+<div class="field">
+  <label>Доп. Покрытие</label>
+  <select ng-model="selected.covering" ng-options="record.tag for record in prodAttr.covering">
+  </select>
+</div>
+<div class="field">
+  <label>Скругление углов</label>
+  <select ng-model="selected.roundCorners" ng-options="record.tag for record in prodAttr.roundCorners">
+  </select>
+</div>
+<div class="field">
+  <label>Криволинейный контур</label>
+  <select ng-model="selected.crooked" ng-options="record.tag for record in prodAttr.crooked">
+  </select>
+</div>
+<div class="field">
+  <label>Печать переменных данных</label>
+  <select ng-model="selected.printVariableData" ng-options="record.tag for record in prodAttr.printVariableData"></select>
+</div>
+
+<div class="field">
+  <label ng-class="{leadmenu: selected.notePad.selected}">Блок для записей</label>
+  <select ng-model="selected.notePad" ng-options="record.tag for record in prodAttr.notePad"></select>
+</div>
+<div class="field submenu" ng-show="selected.notePad.selected">
+  <label>Размер листов</label>
+  <select ng-model="selected.sheetSize" ng-options="record.tag for record in prodAttr.sheetSize"></select>
+</div>
+<div class="field submenu" ng-show="selected.notePad.selected">
+  <label>Количество листов</label>
+  <select ng-model="selected.sheetQtt" ng-options="record.tag for record in prodAttr.sheetQtt"></select>
+</div>
+<div class="field submenu" ng-show="selected.notePad.selected">
+  <label>Печать</label>
+  <select ng-model="selected.sheetPrint" ng-options="record.tag for record in prodAttr.sheetPrint"></select>
+</div>
+
+<div class="field">
+  <label>Стоимость</label>
+  <div class="calcresult">{{totalprice}}<span class="totalcurrancy"> Руб.</span></div>
+</div>

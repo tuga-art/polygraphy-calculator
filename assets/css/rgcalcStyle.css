@@ -3,3 +3,81 @@
   margin: 20px;
   padding: 12px;
 }
+div.field {
+  margin: 1px;
+  padding: 0;
+  padding-bottom: 0.5em;
+}
+div.field.submenu {
+  margin-left: 30px;
+}
+div.field.submenu select {
+  width: 215px;
+}
+label.leadmenu {
+  font-weight: bolder;
+  padding-right: 12px;
+}
+div.field label {
+  margin: 0;
+  padding: 0;
+  display: block;
+  padding-top: 6px;
+  padding-right: 7px;
+  width: 190px;
+  text-align: right;
+  float: left;
+  font-size: 13px;
+}
+div.field select {
+  margin-right: 8px;
+  padding: 4px;
+  display: inline-block;;
+  width: 245px;
+  text-align: left;
+  font-size: 13px;
+}
+div.field input.selectlike {
+  margin-right: 8px;
+  padding: 3px 4px 3px 4px;
+  display: inline-block;;
+  width: 233px;
+  text-align: left;
+  font-size: 13px;
+}
+select.othervar {
+  width: 110px !important;
+}
+div.field input.small {
+  margin: 0;
+  padding: 2px;
+  display: inline;
+  width: 30px;
+  text-align: center;
+  font-size: 13px;
+}
+span.totalprice {
+  margin: 0;
+  padding: 0;
+  display: block;
+  padding-top: 6px;
+  padding-right: 7px;
+  width: 190px;
+  text-align: right;
+  float: left;
+  font-size: 15px;
+}
+div.calcresult {
+  margin-top: 20px;
+  padding: 4px;
+  display: block;
+  width: 350px;
+  text-align: left;
+  font-size: 34px;
+  line-height: 5px;
+}
+span.totalcurrancy {
+  margin-top: 10px;
+  font-size: 16px;
+  color: grey;
+}

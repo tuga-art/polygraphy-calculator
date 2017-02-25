@@ -1,0 +1,23 @@
+<div class="field">
+  <label>Тираж</label>
+  <input class="selectlike" type="text" numbers-only ng-model="selected.quantity" placeholder="от 20шт">
+</div>
+<div class="field">
+  <label>Размер</label>
+  <select ng-model="selected.format" ng-options="record.tag for record in prodAttr.format">
+  </select>
+</div>
+<div class="field">
+  <label>Цветность</label>
+  <select ng-model="selected.colored" ng-options="record.tag for record in prodAttr.colored">
+  </select>
+</div>
+<div class="field">
+  <label>Печать переменных данных</label>
+  <select ng-model="selected.printVariableData" ng-options="record.tag for record in prodAttr.printVariableData"></select>
+</div>
+
+<div class="field">
+  <label>Стоимость</label>
+  <div class="calcresult">{{totalprice}}<span class="totalcurrancy"> Руб.</span></div>
+</div>

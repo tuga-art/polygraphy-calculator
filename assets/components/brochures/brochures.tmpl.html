@@ -1,0 +1,52 @@
+<div class="field">
+  <label>Тираж</label>
+  <input class="selectlike" type="text" numbers-only ng-model="selected.quantity" placeholder="от 20шт">
+</div>
+<div class="field">
+  <label>Размер в развернутом виде</label>
+  <select class="othervar" ng-model="selected.format" ng-options="record.tag for record in prodAttr.format">
+  </select>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side1" ng-disabled="!selected.format.editable">
+  <span> x </span>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side2" ng-disabled="!selected.format.editable">
+  <span style="font-size:13px"> мм </span>
+</div>
+<div class="field">
+  <label>Цветность</label>
+  <select ng-model="selected.colored" ng-options="record.tag for record in prodAttr.colored"></select>
+</div>
+<div class="field">
+  <label class="leadmenu">Листы, материал</label>
+  <select ng-model="selected.sheetsMaterial" ng-options="record.tag for record in prodAttr.sheetsMaterial">
+  </select>
+</div>
+<div class="field submenu">
+  <label>Страниц без обложки</label>
+  <select ng-model="selected.sheetsQtt" ng-options="record for record in prodAttr.sheetsQtt">
+  </select>
+</div>
+<div class="field submenu">
+  <label>Доп. Покрытие</label>
+  <select ng-model="selected.sheetsCovering" ng-options="record.tag for record in prodAttr.sheetsCovering">
+  </select>
+</div>
+
+<div class="field">
+  <label class="leadmenu">Обложка, материал</label>
+  <select ng-model="selected.coverMaterial" ng-options="record.tag for record in prodAttr.coverMaterial"></select>
+</div>
+<div class="field submenu">
+  <label>Доп. Покрытие</label>
+  <select ng-model="selected.coverCovering" ng-options="record.tag for record in prodAttr.coverCovering">
+  </select>
+</div>
+
+<div class="field">
+  <label>Печать переменных данных</label>
+  <select ng-model="selected.printVariableData" ng-options="record.tag for record in prodAttr.printVariableData"></select>
+</div>
+
+<div class="field">
+  <label>Стоимость</label>
+  <div class="calcresult">{{totalprice}}<span class="totalcurrancy"> Руб.</span></div>
+</div>

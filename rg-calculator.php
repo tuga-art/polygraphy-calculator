@@ -29,12 +29,22 @@ define( 'RGCALC_PLUGIN_NAME', dirname(plugin_basename(__FILE__)) );
 define( 'RG_CALCULATOR_DIR', WP_PLUGIN_DIR . '/' . RGCALC_PLUGIN_NAME );
 define( 'RG_CALCULATOR_URL', WP_PLUGIN_URL  . '/' . RGCALC_PLUGIN_NAME );
 
-wp_enqueue_style('semanticUi', RG_CALCULATOR_URL.'/assets/css/vendor/semantic.min.css' );
 wp_enqueue_style('rgcalcStyle', RG_CALCULATOR_URL.'/assets/css/rgcalcStyle.css' );
 wp_enqueue_script('angular', RG_CALCULATOR_URL.'/assets/js/vendor/angular.min.js' );
-wp_enqueue_script('ng-route', RG_CALCULATOR_URL.'/assets/js/vendor/angular-route.min.js');
-wp_enqueue_script('rgcalcApplication', RG_CALCULATOR_URL.'/assets/js/calcApp.js' );
+wp_enqueue_script('rgcalcApplication', RG_CALCULATOR_URL.'/assets/calcApp.js' );
 wp_enqueue_script('rgcalcVizComponent', RG_CALCULATOR_URL.'/assets/components/vizitki/viz.component.js' );
+wp_enqueue_script('rgcalcMagnetsComponent', RG_CALCULATOR_URL.'/assets/components/magnets/magnets.component.js' );
+wp_enqueue_script('rgcalcStickersComponent', RG_CALCULATOR_URL.'/assets/components/stickers/stickers.component.js' );
+wp_enqueue_script('rgcalcNoteBooksComponent', RG_CALCULATOR_URL.'/assets/components/notebooks/notebooks.component.js' );
+wp_enqueue_script('rgcalcEnvepolesComponent', RG_CALCULATOR_URL.'/assets/components/envelopes/envelopes.component.js' );
+wp_enqueue_script('rgcalcLeafletsComponent', RG_CALCULATOR_URL.'/assets/components/leaflets/leaflets.component.js' );
+wp_enqueue_script('rgcalcBookletsComponent', RG_CALCULATOR_URL.'/assets/components/booklets/booklets.component.js' );
+wp_enqueue_script('rgcalcBrochuresComponent', RG_CALCULATOR_URL.'/assets/components/brochures/brochures.component.js' );
+
+
+wp_enqueue_script('rgcalcDataServ', RG_CALCULATOR_URL.'/assets/services/data.service.js' );
+wp_enqueue_script('rgcalcCalcServ', RG_CALCULATOR_URL.'/assets/services/calc.service.js' );
+
 
 add_shortcode('rg-calc', 'calculator_view_init');
 
@@ -43,7 +53,7 @@ function calculator_view_init($atts) {
   //       'width' => 400,
   //       'height' => 200,
   //    ), $atts));
-  return '<div ng-app="calcApp"><div ng-controller="MainCtrl" id="polygraphy-calculator"><div class="calc-container ui tiny form"><div class="field"><select ng-model="product" ng-options="record.prodName for record in prodBase"></select></div><hr color="red"><viz-elem></viz-elem></div></div></div>';
+  return '<div ng-app="calcApp"><div class="calc-container">брошюры<hr color="red"><brochures-elem></brochures-elem><hr color="red"></div><div class="calc-container">буклеты<hr color="red"><booklets-elem></booklets-elem><hr color="red"></div><div class="calc-container">листовки<hr color="red"><leaflets-elem></leaflets-elem><hr color="red"></div><div class="calc-container">конверты<hr color="red"><envelopes-elem></envelopes-elem><hr color="red"></div><div class="calc-container">блокноты<hr color="red"><notebooks-elem></notebooks-elem><hr color="red"></div><div class="calc-container">наклейки<hr color="red"><stickers-elem></stickers-elem><hr color="red"></div><div class="calc-container">магниты<hr color="red"><magnets-elem></magnets-elem><hr color="red"></div><div class="calc-container">визитки<hr color="red"><viz-elem></viz-elem><hr color="red"></div></div>';
 };
 
 ?>

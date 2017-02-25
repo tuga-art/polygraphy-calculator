@@ -1,0 +1,70 @@
+<div class="field">
+  <label>Тираж</label>
+  <input class="selectlike" type="text" numbers-only ng-model="selected.quantity" placeholder="от 20шт">
+</div>
+<div class="field">
+  <label>Размер</label>
+  <select class="othervar" ng-model="selected.format" ng-options="record.tag for record in prodAttr.format">
+  </select>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side1" ng-disabled="!selected.format.editable">
+  <span> x </span>
+  <input class="small" type="text" numbers-only ng-model="selected.format.side2" ng-disabled="!selected.format.editable">
+  <span style="font-size:13px"> мм </span>
+</div>
+<div class="field">
+  <label>Переплёт</label>
+  <select ng-model="selected.binding" ng-options="record.tag for record in prodAttr.binding">
+  </select>
+</div>
+<div class="field">
+  <label class="leadmenu">Листы, материал</label>
+  <select ng-model="selected.sheetsMaterial" ng-options="record.tag for record in prodAttr.sheetsMaterial">
+  </select>
+</div>
+<div class="field submenu">
+  <label>Количество</label>
+  <select ng-model="selected.sheetsQtt" ng-options="record.tag for record in prodAttr.sheetsQtt">
+  </select>
+</div>
+<div class="field submenu">
+  <label>Цветность</label>
+  <select ng-model="selected.sheetsColored" ng-options="record.tag for record in prodAttr.sheetsColored"></select>
+</div>
+
+<div class="field">
+  <label class="leadmenu">Обложка, материал</label>
+  <select ng-model="selected.frontCoverMaterial" ng-options="record.tag for record in prodAttr.frontCoverMaterial"></select>
+</div>
+<div class="field submenu">
+  <label>Цветность</label>
+  <select ng-model="selected.frontCoverColored" ng-options="record.tag for record in prodAttr.frontCoverColored"></select>
+</div>
+<div class="field submenu">
+  <label>Доп. Покрытие</label>
+  <select ng-model="selected.frontCoverCovering" ng-options="record.tag for record in prodAttr.frontCoverCovering">
+  </select>
+</div>
+
+<div class="field">
+  <label class="leadmenu">Подложка, материал</label>
+  <select ng-model="selected.backCoverMaterial" ng-options="record.tag for record in prodAttr.backCoverMaterial"></select>
+</div>
+<div class="field submenu">
+  <label>Цветность</label>
+  <select ng-model="selected.backCoverColored" ng-options="record.tag for record in prodAttr.backCoverColored"></select>
+</div>
+<div class="field submenu">
+  <label>Доп. Покрытие</label>
+  <select ng-model="selected.backCoverCovering" ng-options="record.tag for record in prodAttr.backCoverCovering">
+  </select>
+</div>
+
+<div class="field">
+  <label>Печать переменных данных</label>
+  <select ng-model="selected.printVariableData" ng-options="record.tag for record in prodAttr.printVariableData"></select>
+</div>
+
+<div class="field">
+  <label>Стоимость</label>
+  <div class="calcresult">{{totalprice}}<span class="totalcurrancy"> Руб.</span></div>
+</div>

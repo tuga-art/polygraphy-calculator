@@ -1,0 +1,44 @@
+<div class="field">
+  <label>Тираж</label>
+  <select ng-model="sel.amount" ng-options="record.tag for record in prodAttr.amount">
+  </select>
+</div>
+<div class="field">
+  <label>Размер</label>
+  <select ng-model="sel.format" ng-disabled="ifOffset" ng-options="record.tag for record in prodAttr.format">
+  </select>
+</div>
+<div class="field">
+  <label>Материал</label>
+  <select ng-model="sel.material" ng-disabled="ifOffset" ng-options="record.tag for record in prodAttr.material">
+  </select>
+</div>
+<div class="field">
+  <label>Цветность</label>
+  <select ng-model="sel.colored" ng-disabled="ifTransperent" ng-options="record.tag for record in prodAttr.colored">
+  </select>
+</div>
+<div class="field">
+  <label>Доп. Покрытие</label>
+  <select ng-model="sel.covering" ng-disabled="ifOffset || ifTransperent" ng-options="record.tag for record in prodAttr.covering">
+  </select>
+</div>
+
+<div class="field">
+  <label>Скругление углов</label>
+  <select ng-model="sel.roundCorners" ng-disabled="ifOffset" ng-options="record.tag for record in prodAttr.roundCorners">
+  </select>
+</div>
+<div class="field">
+  <label>Перфорация под бейдж</label>
+  <select ng-model="sel.perforation" ng-disabled="ifOffset" ng-options="record.tag for record in prodAttr.perforation">
+  </select>
+</div>
+<div class="field">
+  <label>Печать переменных данных</label>
+  <select ng-model="sel.printVariableData" ng-disabled="ifOffset" ng-options="record.tag for record in prodAttr.printVariableData"></select>
+</div>
+<div class="field">
+  <label>Стоимость</label>
+  <div class="calcresult">{{totalprice}}<span class="totalcurrancy"> Руб.</span></div>
+</div>
